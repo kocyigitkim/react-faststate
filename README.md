@@ -1,1 +1,1 @@
-# rn-faststate
+# faststate-react
