@@ -63,7 +63,7 @@ export default class FastState {
     const binded = action.bind(state);
     state[name] = ((binded, ...args) => {
       binded(...args);
-      this.update();
+      state.update();
     }).bind(state, binded);
   }
   static unregister(state, component) {
