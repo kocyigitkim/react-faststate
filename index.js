@@ -10,13 +10,25 @@ export default class FastState {
       var funcValue = this[func];
       if ((typeof funcValue) == "function") {
         const binded = funcValue.bind(this);
-        this[func] = (async (binded, ...args) => {
-          var r = binded(...args);
-          if (r instanceof Promise) {
-            await r.catch(console.error);
-          }
-          this.update();
-        }).bind(this, binded);
+        if (func.startsWith("get")) {
+          this[func] = (async (binded, ...args) => {
+            var r = binded(...args);
+            if (r instanceof Promise) {
+              return await r.catch(console.error);
+            }
+            return r;
+          }).bind(this, binded);
+        }
+        else {
+          this[func] = (async (binded, ...args) => {
+            var r = binded(...args);
+            if (r instanceof Promise) {
+              r = await r.catch(console.error);
+            }
+            this.update();
+            return r;
+          }).bind(this, binded);
+        }
       }
     }
   }
