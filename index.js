@@ -1,5 +1,12 @@
 import React from "react";
 
+export * from './states/AuthenticationState';
+export * from './states/DialogState';
+export * from './states/LoadingState';
+export * from './states/LocalizationState';
+export * from './states/ThemeState';
+export * from './states/State';
+
 export default class FastState {
   constructor() {
     this.faststate_components = [];

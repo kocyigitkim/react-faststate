@@ -1,10 +1,10 @@
 import FastState from "..";
 
 export default class AuthenticationState extends FastState {
-  user = null;
-  isLoggedIn = false;
   constructor() {
     super();
+    this.user = null;
+    this.isLoggedIn = false;
   }
   login(user) {
     this.user = user;

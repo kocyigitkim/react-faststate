@@ -1,10 +1,10 @@
 import FastState from "..";
 
 export default class ThemeState extends FastState {
-    themes = {};
-    theme = "default";
     constructor() {
         super();
+        this.themes = {};
+        this.theme = "default";
         this.get = (key)=>{
             const thm = this.themes[this.theme];
             if (thm) {

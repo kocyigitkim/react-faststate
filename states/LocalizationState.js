@@ -1,10 +1,10 @@
 import FastState from "..";
 
 export default class LocalizationState extends FastState {
-    languages = {};
-    language = null;
     constructor() {
         super();
+        this.languages = {};
+        this.language = null;
         this.get = (key)=>{
             const lang = this.languages[this.language];
             if (lang) {

@@ -5,8 +5,11 @@ function createComponent(ComponentDefinition, props) {
 }
 
 export class NavigationState extends FastState {
-  history = [];
-  paths = {};
+  constructor(){
+    super();
+    this.history = [];
+    this.paths = {};
+  }
   push(path, props) {
     this.history = [
       {
@@ -34,19 +37,3 @@ export class NavigationState extends FastState {
 }
 
 export const Navigation = new NavigationState();
-
-export class NavigationProvider extends Component {
-  componentDidMount() {
-    Navigation.register(this);
-  }
-  render() {
-    const activePage = Navigation.history[0];
-
-    return (
-      <>
-        {(activePage && activePage.component) || <></>}
-        {this.props.children}
-      </>
-    );
-  }
-}
