@@ -9,4 +9,4 @@ class State extends FastState {
     }
 }
 
-module.exports = { State };
+module.exports = State;
