@@ -1,5 +1,3 @@
-import React from "react";
-
 export default class FastState {
   constructor() {
     this.faststate_components = [];
@@ -87,7 +85,7 @@ export default class FastState {
       }
     }
   }
-  static functional() {
+  static functional(React = null) {
     const [v, setV] = React.useState(0);
     return {
       v, setV, forceUpdate: () => {
