@@ -1,4 +1,3 @@
-import React from 'react';
 
 export class DynoValue {
     constructor(reference, fieldName, component) {

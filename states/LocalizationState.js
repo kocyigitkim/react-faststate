@@ -1,11 +1,12 @@
-import FastState from "..";
+const FastState = require('../index');
 
-export default class LocalizationState extends FastState {
+
+module.exports = class LocalizationState extends FastState {
     constructor() {
         super();
         this.languages = {};
         this.language = null;
-        this.get = (key)=>{
+        this.get = (key) => {
             const lang = this.languages[this.language];
             if (lang) {
                 return lang[key];

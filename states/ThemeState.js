@@ -1,11 +1,12 @@
-import FastState from "..";
+const FastState = require('../index');
 
-export default class ThemeState extends FastState {
+
+class ThemeState extends FastState {
     constructor() {
         super();
         this.themes = {};
         this.theme = "default";
-        this.get = (key)=>{
+        this.get = (key) => {
             const thm = this.themes[this.theme];
             if (thm) {
                 return thm[key];
@@ -20,3 +21,5 @@ export default class ThemeState extends FastState {
         this.theme = themeName;
     }
 }
+
+module.exports = { ThemeState };

@@ -1,4 +1,4 @@
-export default class FastState {
+module.exports = class FastState {
   constructor() {
     this.faststate_components = [];
     this.register = this.register.bind(this);

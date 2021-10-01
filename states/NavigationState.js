@@ -1,11 +1,12 @@
-import FastState from ".."
+const FastState = require('../index');
+
 
 function createComponent(ComponentDefinition, props) {
   return <ComponentDefinition {...props}></ComponentDefinition>;
 }
 
-export class NavigationState extends FastState {
-  constructor(){
+class NavigationState extends FastState {
+  constructor() {
     super();
     this.history = [];
     this.paths = {};
@@ -36,4 +37,6 @@ export class NavigationState extends FastState {
   }
 }
 
-export const Navigation = new NavigationState();
+const Navigation = new NavigationState();
+
+module.exports = { NavigationState, Navigation };

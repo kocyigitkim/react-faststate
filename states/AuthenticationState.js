@@ -1,6 +1,6 @@
-import FastState from "..";
+const FastState = require('../index');
 
-export default class AuthenticationState extends FastState {
+module.exports = class AuthenticationState extends FastState {
   constructor() {
     super();
     this.user = null;

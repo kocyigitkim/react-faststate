@@ -1,6 +1,6 @@
-import FastState from '..'
+const FastState = require('../index');
 
-export default class State extends FastState {
+class State extends FastState {
     constructor(...args) {
         super();
         for (var a of args) {
@@ -8,3 +8,5 @@ export default class State extends FastState {
         }
     }
 }
+
+module.exports = { State };

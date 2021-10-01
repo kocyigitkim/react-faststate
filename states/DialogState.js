@@ -1,8 +1,9 @@
-import FastState from "..";
+const FastState = require('../index');
+
 
 const skip_reset_keys = ["faststate_components", "register", "show", "hide", "setLoading", "setNormal", "setSuccess", "setError", "reset", "faststate_isupdate"];
 
-export default class DialogState extends FastState {
+module.exports = class DialogState extends FastState {
     constructor() {
         super();
         this.visible = false;
